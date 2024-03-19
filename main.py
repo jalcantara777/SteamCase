@@ -71,9 +71,9 @@ def sentiment_analysis(anio: int= Query(..., description="Ingrese el año, el cu
     """
     Retorna una lista con la cantidad de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento para el año de lanzamiento dado.
     """
-    retsentneg=df_years_SA[df_years_SA.release_year==anio].Negativo.iloc[0]
-    retsentneu=df_years_SA[df_years_SA.release_year==anio].Neutro.iloc[0]
-    retsentpos=df_years_SA[df_years_SA.release_year==anio].Positivo.iloc[0]
+    retsentneg=str(df_years_SA[df_years_SA.release_year==anio].Negativo.iloc[0])
+    retsentneu=str(df_years_SA[df_years_SA.release_year==anio].Neutro.iloc[0])
+    retsentpos=str(df_years_SA[df_years_SA.release_year==anio].Positivo.iloc[0])
     retval ='Negative = '+retsentneg+' |  Neutral = '+retsentneu+' | Positive = '+retsentpos
     return retval
 
