@@ -3,12 +3,12 @@ import pandas as pd
 
 app = FastAPI()
 
-df_genres_PTG=pd.read_csv('Data4_FuncReturn2API\playtimeforever.csv')
-df_genres_UFG=pd.read_csv('Data4_FuncReturn2API\usersforgenre.csv')
-df_years_URG =pd.read_csv('Data4_FuncReturn2API\usersrecforyear.csv')
-df_years_UNRG=pd.read_csv('Data4_FuncReturn2API\usersnotrecforyear.csv')
-df_years_SA  =pd.read_csv('Data4_FuncReturn2API\sentanalyforyear.csv')
-df_games_RG5 =pd.read_csv('Data4_FuncReturn2API\RecGame5forUser.csv')
+df_genres_PTG=pd.read_csv('Data4_FuncReturn2API\\playtimeforever.csv')
+df_genres_UFG=pd.read_csv('Data4_FuncReturn2API\\usersforgenre.csv')
+df_years_URG =pd.read_csv('Data4_FuncReturn2API\\usersrecforyear.csv')
+df_years_UNRG=pd.read_csv('Data4_FuncReturn2API\\usersnotrecforyear.csv')
+df_years_SA  =pd.read_csv('Data4_FuncReturn2API\\sentanalyforyear.csv')
+df_games_RG5 =pd.read_csv('Data4_FuncReturn2API\\RecGame5forUser.csv')
 
 lst_genres   =pd.read_csv('Data3_EDA_out\genres.csv')
 lst_games    =df_games_RG5.user_id.to_list()
