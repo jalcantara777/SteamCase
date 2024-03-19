@@ -25,8 +25,9 @@ def PlayTimeGenre(genero: str= Query(..., description=f"Ingrese desde las 3 prim
     NOTA.
     Si no ingresó la palabra completa correspondiente al género deseado, verifique que sea el que quería ya que puede haber coincidencia con otro género similar.
     """
-    retyear=df_genres_PTG[df_genres_PTG.genre.str.lower().str.startswith(genero.lower())].maxplaytime_year.iloc[0]
-    retval ="Año de lanzamiento con más horas jugadas para el Género "+genero.upper()+" : "+str(retyear)
+    retyear =df_genres_PTG[df_genres_PTG.genre.str.lower().str.startswith(genero.lower())].maxplaytime_year.iloc[0]
+    genre   =df_genres_PTG[df_genres_PTG.genre.str.lower().str.startswith(genero.lower())].genre.iloc[0]
+    retval ="Año de lanzamiento con más horas jugadas para el Género "+genre.upper()+" : "+str(retyear)
     return retval
 
 @app.get('/UserForGenre')
@@ -39,7 +40,8 @@ def UserForGenre(genero: str= Query(..., description=f"Ingrese desde las 3 prime
     """
     retuser =df_genres_UFG[df_genres_UFG.genre.str.lower().str.startswith(genero.lower())].user.iloc[0]
     retlsth =df_genres_UFG[df_genres_UFG.genre.str.lower().str.startswith(genero.lower())].list_played_hours.iloc[0]
-    retval ="Usuario con más horas jugadas para el Género "+genero.upper()+" : "+retuser+" , Horas jugadas: "+retlsth
+    genre   =df_genres_PTG[df_genres_PTG.genre.str.lower().str.startswith(genero.lower())].genre.iloc[0]
+    retval ="Usuario con más horas jugadas para el Género "+genre.upper()+" : "+retuser+" , Horas jugadas: "+retlsth
     return retval
 
 @app.get('/UsersRecommend')
@@ -75,7 +77,7 @@ def sentiment_analysis(anio: int= Query(..., description="Ingrese el año, el cu
     retval ='Negative = '+retsentneg+'  Neutral = '+retsentneu+'  Positive = '+retsentpos
     return retval
 
-@app.get('/recomendacion_juego')
+@app.get('/recomendacion_usuario')
 def recomendacion_usuario(userid: str= Query(..., description=f"Ingrese uno de los valores posibles de esta lista: {lst_games}")):
     """
     Retorna una lista con los 5 IDs de los juegos recomendados similares al ingresado.
