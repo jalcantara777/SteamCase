@@ -21,18 +21,18 @@ Este objetivo lo logré a través de  de 4 etapas bien definidas, las cuales det
 ## 1. ETL - Data Engineer
 En esta etapa de Ingeniería de Datos se realizó un proceso de ETL, extracción, transformación y carga de datos, donde se recibieron 3 archivos JSON comprimidos en formato GZ con datos de compra de los videojuegos, la interacción de los usuarios y las evaluaciones de ellos.
 Al final de esta etapa, se crea un dataset en formato CSV que servirá en la siguiente etapa y se guardarán en la carpeta: Data2_ETL_out.
-#### Notebook Link: https://github.com/felipe97rg/proyecto_3/blob/main/ETL.ipynb
+#### Notebook Link: https://github.com/jalcantara777/SteamCase/blob/main/1_ETL-Data_xform.ipynb
 #### Data Source: https://drive.google.com/drive/folders/1HqBG2-sUkz_R3h1dZU5F2uAzpRn7BSpj
 
 ## 2. EDA - Exploratory Data Analysis
 En esta etapa de Análisis Exploratorio de Datos se realizó la conversión y completado de los datos, también se verificaron y eliminaron los datos nulos, duplicados, outliers y el formato de los datos para posteriormente realizar un análisis gráfico sobre estos datos depurados. Al igual que en la etapa anterior, al final se crea un dataset en formato CSV que servirá en la siguiente etapa y se guardarán en la carpeta: Data3_EDA_out.
-#### Notebook Link: https://github.com/felipe97rg/proyecto_3/blob/main/ETL.ipynb
-#### Data Source: https://drive.google.com/drive/folders/1HqBG2-sUkz_R3h1dZU5F2uAzpRn7BSpj
+#### Notebook Link: https://github.com/jalcantara777/SteamCase/blob/main/2_EDA.ipynb
+#### Data Source: https://github.com/jalcantara777/SteamCase/blob/main/Data2_ETL_out.rar
 
 ## 3. ML - Machine Learning
 Después de haber realizado eficaz y profesionalmente las etapas anteriores, los datos ya se encuentran preparados para realizar el entrenamiento del modelo establecido, para lo cual se diseñan e implementan las respectivas funciones. Al igual que en la etapa anterior, al final se crea un dataset en formato CSV que servirá eficientemente en la ejecución de la API y se guardarán en la carpeta: Data4_FuncReturn2API.
-#### Notebook Link: https://github.com/felipe97rg/proyecto_3/blob/main/ETL.ipynb
-#### Data Source: https://drive.google.com/drive/folders/1HqBG2-sUkz_R3h1dZU5F2uAzpRn7BSpj
+#### Notebook Link: https://github.com/jalcantara777/SteamCase/blob/main/3_ML_Functions.ipynb
+#### Data Source: https://github.com/jalcantara777/SteamCase/blob/main/Data3_EDA_out.rar
 
 ## 4. FastAPI - RENDER
 Una vez completadas las 3 etapas anteriores, los datos se encuentran optimizados en cuanto a tamaño para que puedan ser consultados sin problemas mediante el framework FastAPI en la web service de RENDER. Para lograr esto, se desarrolló el código principal en el módulo **main.py**. En el cual se encuentran las siguientes funciones:
@@ -49,7 +49,8 @@ Una vez completadas las 3 etapas anteriores, los datos se encuentran optimizados
 
     def recomendacion_usuario( id de usuario ): Ingresando el id de un usuario, deberíamos recibir una lista con 5 juegos recomendados para dicho usuario.
 
-#### Linkl FastAPI : https://proyecto-3-jflm.onrender.com/docs
+#### Main.py Link: https://github.com/jalcantara777/SteamCase/blob/main/main.py
+#### Render Link : https://proyecto-3-jflm.onrender.com/docs
 
 ## Video
 En el siguiente link se encuentra el video que explica tanto el funcionamiento del web service como las 3 etapas anteriores del proyecto en forma resumida.
