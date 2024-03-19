@@ -49,9 +49,9 @@ def UsersRecommend(anio: int= Query(..., description="Ingrese el año, el cual d
     """
     Retorna el top 3 de juegos MÁS recomendados por usuarios para el año dado.
     """
-    retusrrg1=df_years_URG[df_years_URG.year==anio].usrrec_game1.iloc[0]
-    retusrrg2=df_years_URG[df_years_URG.year==anio].usrrec_game2.iloc[0]
-    retusrrg3=df_years_URG[df_years_URG.year==anio].usrrec_game3.iloc[0]
+    retusrrg1=df_years_URG[df_years_URG.posted_year==anio].usrrec_game1.iloc[0]
+    retusrrg2=df_years_URG[df_years_URG.posted_year==anio].usrrec_game2.iloc[0]
+    retusrrg3=df_years_URG[df_years_URG.posted_year==anio].usrrec_game3.iloc[0]
     retval ='"Puesto 1" : '+retusrrg1+'"Puesto 2" : '+retusrrg2+'"Puesto 3" : '+retusrrg3
     return retval
 
@@ -60,9 +60,9 @@ def UsersNotRecommend(anio: int= Query(..., description="Ingrese el año, el cua
     """
     Retorna el top 3 de juegos MENOS recomendados por usuarios para el año dado.
     """
-    retusrnrg1=df_years_UNRG[df_years_UNRG.year==anio].usrnrec_game1.iloc[0]
-    retusrnrg2=df_years_UNRG[df_years_UNRG.year==anio].usrnrec_game2.iloc[0]
-    retusrnrg3=df_years_UNRG[df_years_UNRG.year==anio].usrnrec_game3.iloc[0]
+    retusrnrg1=df_years_UNRG[df_years_UNRG.posted_year==anio].usrnrec_game1.iloc[0]
+    retusrnrg2=df_years_UNRG[df_years_UNRG.posted_year==anio].usrnrec_game2.iloc[0]
+    retusrnrg3=df_years_UNRG[df_years_UNRG.posted_year==anio].usrnrec_game3.iloc[0]
     retval ='{"Puesto 1" : '+retusrnrg1+'}, {"Puesto 2" : '+retusrnrg2+'} "Puesto 3" : '+retusrnrg3+'}'
     return retval
 
