@@ -4,7 +4,7 @@ import pandas as pd
 app = FastAPI()
 
 df_genres_PTG=pd.read_csv('Data4_FuncReturn2API/playtimeforever.csv')
-df_genres_UFG=pd.read_csv('Data4_FuncReturn2API/usersforgenre.csv')
+df_genres_UFG=pd.read_csv('Data4_FuncReturn2API/UsersForGenre.csv')
 df_years_URG =pd.read_csv('Data4_FuncReturn2API/usersrecforyear.csv')
 df_years_UNRG=pd.read_csv('Data4_FuncReturn2API/usersnotrecforyear.csv')
 df_years_SA  =pd.read_csv('Data4_FuncReturn2API/sentanalyforyear.csv')
