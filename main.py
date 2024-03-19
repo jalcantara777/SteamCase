@@ -71,16 +71,17 @@ def sentiment_analysis(anio: int= Query(..., description="Ingrese el año, el cu
     """
     Retorna una lista con la cantidad de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento para el año de lanzamiento dado.
     """
-    retsentneg=str(df_years_UNRG[df_years_UNRG.release_year==anio].Negativo.iloc[0])
-    retsentneu=str(df_years_UNRG[df_years_UNRG.release_year==anio].Neutro.iloc[0])
-    retsentpos=str(df_years_UNRG[df_years_UNRG.release_year==anio].Positivo.iloc[0])
+    retsentneg=df_years_SA[df_years_SA.release_year==anio].Negativo.iloc[0]
+    retsentneu=df_years_SA[df_years_SA.release_year==anio].Neutro.iloc[0]
+    retsentpos=df_years_SA[df_years_SA.release_year==anio].Positivo.iloc[0]
     retval ='Negative = '+retsentneg+' |  Neutral = '+retsentneu+' | Positive = '+retsentpos
     return retval
 
 @app.get('/recomendacion_usuario')
-def recomendacion_usuario(userid: str= Query(..., description=f"Ingrese uno de los valores posibles de esta lista: {lst_games}")):
+def recomendacion_usuario(userid: str= Query(..., description=f"Ingrese desde las 3 primeras letras de los valores posibles de esta lista: {lst_games}")):
     """
     Retorna una lista con los 5 IDs de los juegos recomendados similares al ingresado.
     """
-    retlst_rg5=df_games_RG5[df_games_RG5.user_id==userid].lst_rg5.iloc[0]
-    return f"Lista con los 5 IDs de los juegos recomendados similares: {retlst_rg5}"
+    retlst_rg5=df_games_RG5[df_games_RG5.user_id.str.lower().str.startswith(userid.lower())].lst_rg5.iloc[0]
+    retuser_id=df_games_RG5[df_games_RG5.user_id.str.lower().str.startswith(userid.lower())].user_id.iloc[0]
+    return f"Para el usuario {retuser_id} se tiene esta Lista con los 5 IDs de los juegos recomendados: {retlst_rg5}"
