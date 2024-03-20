@@ -59,7 +59,7 @@ Una vez completadas las 3 etapas anteriores, los datos se encuentran optimizados
 
 ## Video
 En el siguiente link se encuentra el video que explica tanto el funcionamiento del web service como las 3 etapas anteriores del proyecto en forma resumida.
-#### Youtube Link: https://www.youtube.com/channel/UCrR9T1nEFfQpWviNudpueBw
+#### Youtube Link: https://youtu.be/gOJ8loOsoPI
 
 ## Requisitos para la ejecución correcta en RENDER
 
