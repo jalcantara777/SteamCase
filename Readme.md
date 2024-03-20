@@ -1,9 +1,10 @@
-<p align=center><img src=https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png><p>
+<div>
+<p align=center><img src="images/Henry_logo.png" height=200><p>
 
 # <h1 align=center> **PROYECTO INDIVIDUAL Nº1** </h1>
 
 # <h1 align=center>**`STEAM CASE`**</h1>
-
+</div>
 <p align="center">
 <img src="images/Steam-background.jpg"  height=300>
 </p>
@@ -15,17 +16,21 @@
 El presente caso es mi Proyecto Individual 01 de mi carrera de Data Science para la etapa de LABS de la plataforma educativa HENRY, en el cual implementaré, de forma práctica, sobre un caso real la mayoría de las habilidades obtenidas durante la etapa de aprendizaje del BOOTCAMP.
 ## DESCRIPCIÓN DEL PROYECTO
 
-En este proyecto debo fungir el rol de Data Scientist de STEAM, la cual es una plataforma multinacional de videojuegos y me solicita que que te encargues de crear un sistema de recomendación de videojuegos para usuarios.
-Este objetivo lo logré a través de  de 4 etapas bien definidas, las cuales detallo a continuación:
+En este proyecto debo fungir el rol de Data Scientist de STEAM, la cual es una plataforma multinacional de videojuegos y me solicitó que me encargara de crear un sistema de recomendación de videojuegos para usuarios.
+Este objetivo lo logré a través de la implementación de 4 etapas bien definidas, las cuales detallo a continuación:
 
 ## 1. ETL - Data Engineer
-En esta etapa de Ingeniería de Datos se realizó un proceso de ETL, extracción, transformación y carga de datos, donde se recibieron 3 archivos JSON comprimidos en formato GZ con datos de compra de los videojuegos, la interacción de los usuarios y las evaluaciones de ellos.
-Al final de esta etapa, se crea un dataset en formato CSV que servirá en la siguiente etapa y se guardarán en la carpeta: Data2_ETL_out.
+En esta etapa de Ingeniería de Datos, se realizó un proceso de ETL, extracción, transformación y carga de datos, donde se recibieron 3 archivos JSON comprimidos en formato GZ con datos de compra de los videojuegos, la interacción de los usuarios y las evaluaciones de ellos.
+La primera transformación se hizo manual, decir se usó el utilitario Winrar para descomprimir cada uno de los archivos fuente y luego se cambiaron sus nombres:
+
+<img src="images/init_chgname.png"  height=100>
+
+Al final de esta etapa, se crea un dataset en formato CSV que servirá para trabajar en la siguiente etapa y se guardarán en la carpeta: Data2_ETL_out.
 #### Notebook Link: https://github.com/jalcantara777/SteamCase/blob/main/1_ETL-Data_xform.ipynb
 #### Data Source: https://drive.google.com/drive/folders/1HqBG2-sUkz_R3h1dZU5F2uAzpRn7BSpj
 
 ## 2. EDA - Exploratory Data Analysis
-En esta etapa de Análisis Exploratorio de Datos se realizó la conversión y completado de los datos, también se verificaron y eliminaron los datos nulos, duplicados, outliers y el formato de los datos para posteriormente realizar un análisis gráfico sobre estos datos depurados. Al igual que en la etapa anterior, al final se crea un dataset en formato CSV que servirá en la siguiente etapa y se guardarán en la carpeta: Data3_EDA_out.
+En esta etapa de Análisis Exploratorio de Datos, se realizaron la conversión y completado de los datos, también se verificaron y eliminaron los datos nulos, duplicados, outliers y el cambio en el formato de algunos datos para posteriormente realizar un análisis gráfico sobre estos datos depurados. Al igual que en la etapa anterior, al final se crea un dataset en formato CSV que servirá para trabajar en la siguiente etapa y se guardarán en la carpeta: Data3_EDA_out.
 #### Notebook Link: https://github.com/jalcantara777/SteamCase/blob/main/2_EDA.ipynb
 #### Data Source: https://github.com/jalcantara777/SteamCase/blob/main/Data2_ETL_out.rar
 
@@ -35,7 +40,7 @@ Después de haber realizado eficaz y profesionalmente las etapas anteriores, los
 #### Data Source: https://github.com/jalcantara777/SteamCase/blob/main/Data3_EDA_out.rar
 
 ## 4. FastAPI - RENDER
-Una vez completadas las 3 etapas anteriores, los datos se encuentran optimizados en cuanto a tamaño para que puedan ser consultados sin problemas mediante el framework FastAPI en la web service de RENDER. Para lograr esto, se desarrolló el código principal en el módulo **main.py**. En el cual se encuentran las siguientes funciones:
+Una vez completadas las 3 etapas anteriores, los datos se encuentran optimizados en cuanto a tamaño para que puedan ser consultados sin problemas mediante el web framework FastAPI en la web service de RENDER. Para lograr esto, se desarrolló el código principal en el módulo **main.py** en el cual se encuentran las siguientes funciones de igual nombre que en el Jupyter Notebook **"3_ML_Function"**, pero con un algoritmo totalmente diferente y simple:
 
     def PlayTimeGenre( genero : str ): Debe devolver año con mas horas jugadas para dicho género.
 
@@ -50,7 +55,7 @@ Una vez completadas las 3 etapas anteriores, los datos se encuentran optimizados
     def recomendacion_usuario( id de usuario ): Ingresando el id de un usuario, deberíamos recibir una lista con 5 juegos recomendados para dicho usuario.
 
 #### Main.py Link: https://github.com/jalcantara777/SteamCase/blob/main/main.py
-#### Render Link : https://proyecto-3-jflm.onrender.com/docs
+#### Render Link : https://steamcase.onrender.com/docs
 
 ## Video
 En el siguiente link se encuentra el video que explica tanto el funcionamiento del web service como las 3 etapas anteriores del proyecto en forma resumida.
@@ -66,8 +71,9 @@ Asegúrate de tener instaladas las siguientes bibliotecas antes de ejecutar el c
 
 ## Herramientas usadas
 - Visual Studio Code: editor de código
-- Python: lenguaje de programacion
+- Python: lenguaje de programación (versión 3.11)
 - GitHub: repositorio del proyecto y fuente para la API
+- GitBash: terminal con Linux-core
 - FastAPI: web framework
 - Render: servicio en la nube 
 - Winrar: utilitario para comprimir y descomprimir archivos gz y rar
