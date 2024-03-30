@@ -1,3 +1,5 @@
 /Data1_SteamServer
 /Data2_ETL_out
 /Data3_EDA_out
+/mienv
+/__pycache__
